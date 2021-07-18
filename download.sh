@@ -5,20 +5,8 @@ set -e
 # and customized Arch Linux system.
 # Copyright (C) 2021 picodotdev
 
-GITHUB_USER="picodotdev"
-BRANCH="master"
-
-while getopts "u:" arg; do
-  case ${arg} in
-    u)
-      GITHUB_USER=${OPTARG}
-      ;;
-    ?)
-      echo "Invalid option: -${OPTARG}."
-      exit 1
-      ;;
-  esac
-done
+GITHUB_USER="TJTorola"
+BRANCH="desktop"
 
 rm -f alis.conf
 rm -f alis.sh
