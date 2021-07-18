@@ -173,7 +173,6 @@ function check_variables() {
     check_variables_list "CUSTOM_SHELL" "$CUSTOM_SHELL" "bash zsh dash fish"
     check_variables_list "DESKTOP_ENVIRONMENT" "$DESKTOP_ENVIRONMENT" "gnome kde xfce mate cinnamon lxde i3-wm i3-gaps deepin" "false"
     check_variables_boolean "PACKAGES_MULTILIB" "$PACKAGES_MULTILIB"
-    check_variables_boolean "PACKAGES_INSTALL" "$PACKAGES_INSTALL"
     check_variables_boolean "VAGRANT" "$VAGRANT"
     check_variables_boolean "REBOOT" "$REBOOT"
 }
@@ -1595,11 +1594,9 @@ function desktop_environment_deepin() {
 }
 
 function packages() {
-    if [ "$PACKAGES_INSTALL" == "true" ]; then
-        (USER_NAME=$USER_NAME \
-         USER_PASSWORD=$USER_PASSWORD \
-            ./alis-packages.sh)
-    fi
+    (USER_NAME=$USER_NAME \
+     USER_PASSWORD=$USER_PASSWORD \
+        ./alis-packages.sh)
 }
 
 function vagrant() {
